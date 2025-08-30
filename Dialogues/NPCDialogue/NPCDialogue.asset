@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b594ce8cfdef89543b1b98354ea13a0d, type: 3}
+  m_Name: NPCDialogue
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: NPCDialogue
+  <DialogueGroups>k__BackingField:
+    list: []
+  <UngroupedDialogues>k__BackingField:
+  - {fileID: 11400000, guid: 0f1c01b96afe25f4fa0e3cbbfcae71b9, type: 2}
+  - {fileID: 11400000, guid: 1c8bb285e48eace47a660ab4226a3cbf, type: 2}
+  - {fileID: 11400000, guid: 47fe03dcbbc756b40b59665007919141, type: 2}
+  - {fileID: 11400000, guid: 66d66cdceb8f9c345941b6f9ad7faac1, type: 2}
+  - {fileID: 11400000, guid: d8ed96352738c654f8928754cdd021ac, type: 2}
+  - {fileID: 11400000, guid: 07ad2cddcefc77f4290b608682f22a7a, type: 2}

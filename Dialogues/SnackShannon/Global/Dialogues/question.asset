@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e94b0e9392d581245bee5f8d38f04321, type: 3}
+  m_Name: question
+  m_EditorClassIdentifier: 
+  <DialogueName>k__BackingField: question
+  <DialogueSpeaker>k__BackingField: Shannon
+  <Text>k__BackingField: Can i have a snack?
+  <Choices>k__BackingField:
+  - <Text>k__BackingField: Yes
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: d3d7f8affb620714bb0d4ce2a3c86e32, type: 2}
+    <ActionType>k__BackingField: 1
+    <ActionParameter>k__BackingField: 
+  - <Text>k__BackingField: No
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 1d5c0c8bbc8f77b4d94bcd85cff3c67e, type: 2}
+    <ActionType>k__BackingField: 1
+    <ActionParameter>k__BackingField: 
+  - <Text>k__BackingField: Fuck you biatch
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 9b3e2525d04423a4a8ab4fb7e066b77a, type: 2}
+    <ActionType>k__BackingField: 0
+    <ActionParameter>k__BackingField: 
+  <DialogueType>k__BackingField: 1
+  <IsStartingDialogue>k__BackingField: 1

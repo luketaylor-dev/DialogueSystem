@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b594ce8cfdef89543b1b98354ea13a0d, type: 3}
+  m_Name: aslkjda
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: aslkjda
+  <DialogueGroups>k__BackingField:
+    list:
+    - Key: {fileID: 11400000, guid: 6e5788fecf3d2e4439963b4cbe5a5f7d, type: 2}
+      Value:
+      - {fileID: 11400000, guid: acf2ecc9efc519044b95647314cb8ca0, type: 2}
+      - {fileID: 11400000, guid: bce95e69eab80924092a90c113b5d63c, type: 2}
+  <UngroupedDialogues>k__BackingField: []
