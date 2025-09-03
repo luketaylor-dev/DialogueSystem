@@ -46,7 +46,36 @@ namespace DialogueSystem.Elements
         {
             evt.menu.AppendAction("Disconnect Input Ports", _ => DisconnectInputPorts());
             evt.menu.AppendAction("Disconnect Output Ports", _ => DisconnectOutputPorts());
+            evt.menu.AppendSeparator();
+            evt.menu.AppendAction("Duplicate", _ => DuplicateNode());
             base.BuildContextualMenu(evt);
+        }
+
+        private void DuplicateNode()
+        {
+            // Create a copy of this node at a slightly offset position
+            Vector2 newPosition = GetPosition().position + new Vector2(50, 50);
+            DSNode duplicatedNode = GraphView.CreateNode(DialogueName + " Copy", DialogueType, newPosition, false);
+            
+            // Copy the node data
+            duplicatedNode.Text = Text;
+            duplicatedNode.DialogueSpeaker = DialogueSpeaker;
+            duplicatedNode.Choices = new List<DSChoiceSaveData>();
+            
+            // Deep copy the choices
+            foreach (var choice in Choices)
+            {
+                var newChoice = new DSChoiceSaveData
+                {
+                    Text = choice.Text,
+                    ActionType = choice.ActionType,
+                    ActionParameter = choice.ActionParameter
+                };
+                duplicatedNode.Choices.Add(newChoice);
+            }
+            
+            // Redraw the duplicated node to update its UI
+            duplicatedNode.Draw();
         }
 
         public virtual void Draw()

@@ -276,6 +276,11 @@ namespace DialogueSystem.Windows
             AddDebugLabel($"Last Update: {DateTime.Now:HH:mm:ss}");
             AddDebugLabel($"Auto-refresh: Every {UPDATE_INTERVAL}s");
 
+            // Clipboard status
+            var hasCopiedData = !string.IsNullOrEmpty(EditorGUIUtility.systemCopyBuffer) && 
+                               EditorGUIUtility.systemCopyBuffer.StartsWith("DSNodeData:");
+            AddDebugLabel($"Clipboard: {(hasCopiedData ? "Has copied nodes" : "Empty")}");
+
             // Update button
             var updateButton = new Button(() => UpdateDebugInfo()) { text = "Refresh Now" };
             updateButton.style.marginTop = 10;

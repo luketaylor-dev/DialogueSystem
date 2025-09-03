@@ -137,9 +137,14 @@ namespace DialogueSystem.Elements
 
         private void OpenActionPopup(DSChoiceSaveData choiceData, Button actionButton)
         {
-            var popup = new ActionPopupWindow(choiceData, () => RefreshChoicePorts(), actionButton);
             var mousePos = UnityEditor.EditorGUIUtility.GUIToScreenRect(new Rect(Event.current.mousePosition, Vector2.zero));
-            UnityEditor.PopupWindow.Show(mousePos, popup);
+            
+            // Create a new window instance to prevent auto-closing
+            var window = UnityEditor.EditorWindow.CreateInstance<ActionPopupWindow>();
+            window.Initialize(choiceData, () => RefreshChoicePorts(), actionButton);
+            window.position = new Rect(mousePos.x, mousePos.y, 300, 200);
+            window.titleContent = new GUIContent("Action Settings");
+            window.Show();
         }
 
         private void RefreshChoicePorts()
@@ -173,26 +178,41 @@ namespace DialogueSystem.Elements
             }
         }
 
-        private class ActionPopupWindow : UnityEditor.PopupWindowContent
+        private class ActionPopupWindow : UnityEditor.EditorWindow
         {
-            private readonly DSChoiceSaveData _choiceData;
-            private readonly System.Action _onApplyCallback;
+            private DSChoiceSaveData _choiceData;
+            private System.Action _onApplyCallback;
             private DSActionType _actionType;
             private string _actionParameter;
-            private Button _actionButton; // Added this field to store the button reference
+            private Button _actionButton;
 
-            public ActionPopupWindow(DSChoiceSaveData choiceData, System.Action onApplyCallback, Button actionButton)
+            public void Initialize(DSChoiceSaveData choiceData, System.Action onApplyCallback, Button actionButton)
             {
                 _choiceData = choiceData;
                 _onApplyCallback = onApplyCallback;
                 _actionType = choiceData.ActionType;
                 _actionParameter = choiceData.ActionParameter ?? "";
-                _actionButton = actionButton; // Initialize the field
+                _actionButton = actionButton;
+                
+                // Set window properties to prevent auto-closing
+                wantsMouseMove = true;
+                autoRepaintOnSceneChange = false;
+                
+                // Force the window size
+                minSize = new Vector2(300, 200);
+                maxSize = new Vector2(300, 200);
             }
 
-            public override void OnGUI(Rect rect)
+            private void OnGUI()
             {
-                GUILayout.BeginArea(rect);
+                if (_choiceData == null) return;
+                
+                // Force the window size
+                if (position.width != 300 || position.height != 200)
+                {
+                    position = new Rect(position.x, position.y, 300, 200);
+                }
+                
                 GUILayout.Label("Action Settings", UnityEditor.EditorStyles.boldLabel);
                 
                 GUILayout.Space(5);
@@ -222,15 +242,14 @@ namespace DialogueSystem.Elements
                     }
                     
                     _onApplyCallback?.Invoke();
-                    editorWindow.Close();
+                    Close();
                 }
                 
-                GUILayout.EndArea();
-            }
-
-            public override Vector2 GetWindowSize()
-            {
-                return new Vector2(250, 150);
+                // Cancel Button
+                if (GUILayout.Button("Cancel"))
+                {
+                    Close();
+                }
             }
         }
 
