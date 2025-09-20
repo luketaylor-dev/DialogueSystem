@@ -1,6 +1,24 @@
-GridBackground{
-    --grid-background-color: var(--ds-colors-grid-light-grey-1);
-    --line-color: var(--ds-colors-grid-light-grey-2);
-    --thick-line-color: var(--ds-colors-grid-light-grey-3);
+/* Modern Grid Background */
+GridBackground {
+    --grid-background-color: var(--ds-colors-grid-primary);
+    --line-color: var(--ds-colors-grid-secondary);
+    --thick-line-color: var(--ds-colors-grid-tertiary);
     --spacing: var(--ds-metrics-grid-25);
+}
+
+/* Graph View Enhancements */
+.unity-graph-view {
+    background-color: var(--ds-colors-bg-primary);
+}
+
+/* Improved MiniMap Styling */
+.unity-minimap {
+    background-color: var(--ds-colors-bg-elevated);
+    border-color: var(--ds-colors-border-primary);
+    border-width: 1px;
+    border-radius: var(--ds-radius-lg);
+}
+
+.unity-minimap:hover {
+    border-color: var(--ds-colors-border-focus);
 }

@@ -1,16 +1,104 @@
 :root
 {
-    --ds-colors-grid-light-grey-1: #2b2b2b;
-    --ds-colors-grid-light-grey-2: rgba(51, 51, 51, 0.4);
-    --ds-colors-grid-light-grey-3: rgba(51, 51, 51, 1);
-    --ds-colors-window-dark-grey-1: #1D1D1E;
-    --ds-colors-window-dark-grey-2: #2B2D2F;
-    --ds-colors-window-dark-grey-3: #212325;
-    --ds-colors-window-dark-grey-4: #232527;
-    --ds-colors-window-dark-grey-5: #252729;
-    --ds-colors-window-dark-grey-6: #27292C;
-    --ds-colors-window-yellow: #FDD057;
-
+    /* Modern Color Palette */
+    --ds-colors-primary: #6366f1;
+    --ds-colors-primary-hover: #5855eb;
+    --ds-colors-primary-active: #4f46e5;
+    --ds-colors-primary-light: #a5b4fc;
+    --ds-colors-primary-dark: #4338ca;
+    
+    --ds-colors-secondary: #64748b;
+    --ds-colors-secondary-hover: #475569;
+    --ds-colors-secondary-active: #334155;
+    
+    --ds-colors-accent: #f59e0b;
+    --ds-colors-accent-hover: #d97706;
+    --ds-colors-accent-active: #b45309;
+    
+    --ds-colors-success: #10b981;
+    --ds-colors-success-hover: #059669;
+    --ds-colors-warning: #f59e0b;
+    --ds-colors-error: #ef4444;
+    --ds-colors-error-hover: #dc2626;
+    
+    /* Background Colors */
+    --ds-colors-bg-primary: #0f172a;
+    --ds-colors-bg-secondary: #1e293b;
+    --ds-colors-bg-tertiary: #334155;
+    --ds-colors-bg-quaternary: #475569;
+    --ds-colors-bg-elevated: #1e293b;
+    --ds-colors-bg-overlay: rgba(15, 23, 42, 0.8);
+    
+    /* Text Colors */
+    --ds-colors-text-primary: #f8fafc;
+    --ds-colors-text-secondary: #cbd5e1;
+    --ds-colors-text-tertiary: #94a3b8;
+    --ds-colors-text-disabled: #64748b;
+    --ds-colors-text-accent: #fbbf24;
+    
+    /* Border Colors */
+    --ds-colors-border-primary: #334155;
+    --ds-colors-border-secondary: #475569;
+    --ds-colors-border-focus: #6366f1;
+    --ds-colors-border-error: #ef4444;
+    
+    /* Grid Colors */
+    --ds-colors-grid-primary: #1e293b;
+    --ds-colors-grid-secondary: rgba(51, 65, 85, 0.3);
+    --ds-colors-grid-tertiary: rgba(51, 65, 85, 0.6);
+    
+    /* Shadow Colors */
+    --ds-colors-shadow-light: rgba(0, 0, 0, 0.1);
+    --ds-colors-shadow-medium: rgba(0, 0, 0, 0.2);
+    --ds-colors-shadow-heavy: rgba(0, 0, 0, 0.3);
+    
+    /* Spacing System */
+    --ds-spacing-xs: 2px;
+    --ds-spacing-sm: 4px;
+    --ds-spacing-md: 8px;
+    --ds-spacing-lg: 12px;
+    --ds-spacing-xl: 16px;
+    --ds-spacing-2xl: 20px;
+    --ds-spacing-3xl: 24px;
+    --ds-spacing-4xl: 32px;
+    
+    /* Border Radius */
+    --ds-radius-sm: 4px;
+    --ds-radius-md: 6px;
+    --ds-radius-lg: 8px;
+    --ds-radius-xl: 12px;
+    --ds-radius-2xl: 16px;
+    
+    /* Typography */
+    --ds-font-size-xs: 10px;
+    --ds-font-size-sm: 11px;
+    --ds-font-size-md: 12px;
+    --ds-font-size-lg: 14px;
+    --ds-font-size-xl: 16px;
+    --ds-font-size-2xl: 18px;
+    --ds-font-size-3xl: 20px;
+    
+    /* Component Sizes */
+    --ds-size-button-sm: 24px;
+    --ds-size-button-md: 32px;
+    --ds-size-button-lg: 40px;
+    --ds-size-input-sm: 28px;
+    --ds-size-input-md: 36px;
+    --ds-size-input-lg: 44px;
+    --ds-size-toolbar: 48px;
+    
+    /* Legacy variables for backward compatibility */
+    --ds-colors-grid-light-grey-1: var(--ds-colors-grid-primary);
+    --ds-colors-grid-light-grey-2: var(--ds-colors-grid-secondary);
+    --ds-colors-grid-light-grey-3: var(--ds-colors-grid-tertiary);
+    --ds-colors-window-dark-grey-1: var(--ds-colors-bg-primary);
+    --ds-colors-window-dark-grey-2: var(--ds-colors-bg-secondary);
+    --ds-colors-window-dark-grey-3: var(--ds-colors-bg-tertiary);
+    --ds-colors-window-dark-grey-4: var(--ds-colors-bg-quaternary);
+    --ds-colors-window-dark-grey-5: var(--ds-colors-bg-elevated);
+    --ds-colors-window-dark-grey-6: var(--ds-colors-border-primary);
+    --ds-colors-window-yellow: var(--ds-colors-accent);
+    
     --ds-metrics-grid-25: 25;
     --ds-metrics-window-pixels-n12: -12px;
     --ds-metrics-window-pixels-n4: -4px;

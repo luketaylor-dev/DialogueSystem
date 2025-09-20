@@ -1,128 +1,397 @@
-/* CONTAINERS */
+/* MODERN NODE STYLING */
 
+/* Main Node Container */
+.ds-node_main-container {
+    background-color: var(--ds-colors-bg-elevated);
+    border-color: var(--ds-colors-border-primary);
+    border-width: 1px;
+    border-radius: var(--ds-radius-lg);
+}
+
+.ds-node_main-container:hover {
+    border-color: var(--ds-colors-border-focus);
+}
+
+/* Extension Container */
 .ds-node_extension-container {
-    background-color: var(--ds-colors-window-dark-grey-1);
-    padding: var(--ds-metrics-window-pixels-8);
+    background-color: var(--ds-colors-bg-elevated);
+    padding: var(--ds-spacing-lg);
 }
 
+/* Custom Data Container */
 .ds-node_custom-data-container {
-    background-color: var(--ds-colors-window-dark-grey-3);
-    border-radius: var(--ds-metrics-window-pixels-4);
-    padding: var(--ds-metrics-window-pixels-8);
+    background-color: var(--ds-colors-bg-elevated);
+    border-radius: var(--ds-radius-md);
+    padding: var(--ds-spacing-lg);
+    border-width: 1px;
+    border-color: var(--ds-colors-border-primary);
+    margin: var(--ds-spacing-sm) 0;
 }
 
-.ds-node_main-container{
-    background-color: var(--ds-colors-window-dark-grey-1);
+/* TEXT FIELDS */
 
-}
-
-/* INPUTS */
-
+/* Standard Text Fields */
 .ds-node_textfield > .unity-text-field_input {
-    background-color: var(--ds-colors-window-dark-grey-1);
-    border-color: var(--ds-colors-window-dark-grey-6);
-    border-radius: var(--ds-metrics-window-pixels-4);
+    background-color: var(--ds-colors-bg-primary);
+    border-color: var(--ds-colors-border-primary);
+    border-radius: var(--ds-radius-md);
+    border-width: 1px;
+    padding: var(--ds-spacing-md) var(--ds-spacing-lg);
+    color: var(--ds-colors-text-primary);
+    font-size: var(--ds-font-size-md);
     max-width: var(--ds-metrics-window-pixels-240);
     min-width: var(--ds-metrics-window-pixels-160);
-    padding: var(--ds-metrics-window-pixels-8);
-    white-space: normal
 }
 
+.ds-node_textfield > .unity-text-field_input:hover {
+    border-color: var(--ds-colors-border-secondary);
+    background-color: var(--ds-colors-bg-secondary);
+}
+
+.ds-node_textfield > .unity-text-field_input:focus {
+    border-color: var(--ds-colors-primary);
+    background-color: var(--ds-colors-bg-primary);
+}
+
+/* Hidden Text Fields */
 .ds-node_textfield_hidden > .unity-text-field_input {
     background-color: transparent;
     border-color: transparent;
+    padding: var(--ds-spacing-sm) var(--ds-spacing-md);
+}
+
+.ds-node_textfield_hidden > .unity-text-field_input:hover {
+    background-color: var(--ds-colors-bg-secondary);
+    border-color: var(--ds-colors-border-primary);
 }
 
 .ds-node_textfield_hidden > .unity-text-field_input:focus {
-    background-color: var(--ds-colors-window-dark-grey-1);
-    border-color: var(--ds-colors-window-dark-grey-6);
+    background-color: var(--ds-colors-bg-primary);
+    border-color: var(--ds-colors-primary);
 }
 
-.ds-node_filename-textfield > .unity-text-field_input{
+/* Filename Text Fields */
+.ds-node_filename-textfield > .unity-text-field_input {
     max-width: var(--ds-metrics-window-pixels-1000);
+    font-size: var(--ds-font-size-lg);
+    color: var(--ds-colors-text-accent);
 }
 
-.ds-node_filename-textfield > .unity-text-field_input:focus{
-    margin: var(--ds-metrics-window-pixels-4);
-    padding: var(--ds-metrics-window-pixels-4);
+.ds-node_filename-textfield > .unity-text-field_input:focus {
+    margin: var(--ds-spacing-sm);
+    padding: var(--ds-spacing-md) var(--ds-spacing-lg);
+    background-color: var(--ds-colors-bg-primary);
+    border-color: var(--ds-colors-primary);
 }
 
+/* Choice Text Fields */
 .ds-node_choice-textfield > .unity-text-field_input {
-    font-size: var(--ds-metrics-window-pixels-11);
-    height: var(--ds-metrics-window-pixels-35);
+    font-size: var(--ds-font-size-sm);
+    height: var(--ds-size-input-sm);
     max-width: var(--ds-metrics-window-pixels-1000);
     min-width: var(--ds-metrics-window-pixels-0);
+    background-color: var(--ds-colors-bg-tertiary);
+    border-color: var(--ds-colors-border-primary);
 }
-
 
 .ds-node_choice-textfield > .unity-text-field_input:focus {
-    height: var(--ds-metrics-window-pixels-25);
-    margin: var(--ds-metrics-window-pixels-4);
-    padding: var(--ds-metrics-window-pixels-4);
+    height: var(--ds-size-input-md);
+    margin: var(--ds-spacing-sm);
+    padding: var(--ds-spacing-sm) var(--ds-spacing-md);
+    background-color: var(--ds-colors-bg-primary);
+    border-color: var(--ds-colors-primary);
 }
 
+/* Quote Text Fields */
 .ds-node_quote-textfield > .unity-text-field_input {
-    background-color: var(--ds-colors-window-dark-grey-4);
+    background-color: var(--ds-colors-bg-elevated);
     border-color: transparent;
-    border-left-color: var(--ds-colors-window-dark-grey-6);
-    border-left-width: var(--ds-metrics-window-pixels-4);
-    padding: var(--ds-metrics-window-pixels-16);
+    border-left-color: var(--ds-colors-primary);
+    border-left-width: 3px;
+    padding: var(--ds-spacing-xl);
     max-width: var(--ds-metrics-window-pixels-600);
 }
 
 .ds-node_quote-textfield > .unity-text-field_input:hover {
-    background-color: var(--ds-colors-window-dark-grey-5);
+    background-color: var(--ds-colors-bg-elevated);
+    border-color: transparent;
+    border-left-color: var(--ds-colors-primary-light);
 }
 
 .ds-node_quote-textfield > .unity-text-field_input:focus {
-    background-color: var(--ds-colors-window-dark-grey-1);
-    border-color: var(--ds-colors-window-dark-grey-6);
+    background-color: var(--ds-colors-bg-primary);
+    border-color: transparent;
+    border-left-color: var(--ds-colors-primary);
 }
 
 /* BUTTONS */
 
-.ds-node_button{
-    background-color: var(--ds-colors-window-dark-grey-5);
-    border-color: var(--ds-colors-window-dark-grey-1);
-    margin: var(--ds-metrics-window-pixels-4);
-    max-height: var(--ds-metrics-window-pixels-25);
+.ds-node_button {
+    background-color: var(--ds-colors-secondary);
+    border-color: var(--ds-colors-border-primary);
+    border-width: 1px;
+    border-radius: var(--ds-radius-md);
+    margin: var(--ds-spacing-sm);
+    max-height: var(--ds-size-button-md);
+    min-height: var(--ds-size-button-md);
+    padding: var(--ds-spacing-sm) var(--ds-spacing-lg);
+    color: var(--ds-colors-text-primary);
+    font-size: var(--ds-font-size-sm);
 }
 
-.ds-node_button:hover{
-    background-color: var(--ds-colors-window-dark-grey-2);
+.ds-node_button:hover {
+    background-color: var(--ds-colors-secondary-hover);
+    border-color: var(--ds-colors-border-secondary);
 }
 
-.ds-node_button:active{
-    background-color: var(--ds-colors-window-dark-grey-3);
-    color: var(--ds-colors-window-yellow);
+.ds-node_button:active {
+    background-color: var(--ds-colors-secondary-active);
+    color: var(--ds-colors-accent);
 }
 
-/* ELEMENTS */
-TextField{
-    margin-left: var(--ds-metrics-window-pixels-0);
+/* Add Choice Button Specific Styling */
+.ds-node_button-add-choice {
+    background-color: var(--ds-colors-primary);
+    border-color: var(--ds-colors-primary);
+    color: var(--ds-colors-text-primary);
+    min-width: auto;
+    max-width: none;
+    padding: var(--ds-spacing-sm) var(--ds-spacing-lg);
+    font-size: var(--ds-font-size-sm);
 }
 
-Label{
-    margin-left: var(--ds-metrics-window-pixels-0);
+.ds-node_button-add-choice:hover {
+    background-color: var(--ds-colors-primary-hover);
+    border-color: var(--ds-colors-primary-hover);
 }
 
-.ds-node_custom-data-container > Foldout{
+.ds-node_button-add-choice:active {
+    background-color: var(--ds-colors-primary-active);
+}
+
+/* Action Button Specific Styling (Gear Icon) */
+.ds-node_button-action {
+    background-color: var(--ds-colors-primary);
+    border-color: var(--ds-colors-primary);
+    min-width: var(--ds-size-button-sm);
+    max-width: var(--ds-size-button-sm);
+    padding: var(--ds-spacing-xs);
+    font-size: var(--ds-font-size-xs);
+}
+
+.ds-node_button-action:hover {
+    background-color: var(--ds-colors-primary-hover);
+    border-color: var(--ds-colors-primary-hover);
+}
+
+.ds-node_button-action:active {
+    background-color: var(--ds-colors-primary-active);
+}
+
+/* Delete Button Specific Styling (X button) */
+.ds-node_button-delete {
+    background-color: var(--ds-colors-error);
+    border-color: var(--ds-colors-error);
+    color: var(--ds-colors-text-primary);
+    min-width: var(--ds-size-button-sm);
+    max-width: var(--ds-size-button-sm);
+    padding: var(--ds-spacing-xs);
+    font-size: var(--ds-font-size-xs);
+}
+
+.ds-node_button-delete:hover {
+    background-color: var(--ds-colors-error-hover);
+    border-color: var(--ds-colors-error-hover);
+}
+
+/* LABELS */
+
+.ds-node_label {
+    margin-top: var(--ds-spacing-lg);
+    margin-bottom: var(--ds-spacing-sm);
+    color: var(--ds-colors-text-primary);
+    font-size: var(--ds-font-size-lg);
+}
+
+.ds-node_sub-label {
+    color: var(--ds-colors-text-tertiary);
+    font-size: var(--ds-font-size-sm);
+    margin-bottom: var(--ds-spacing-md);
+}
+
+/* FOLDOUT STYLING */
+.ds-node_custom-data-container > Foldout {
     margin-left: var(--ds-metrics-window-pixels-n4);
-    margin-top: var(--ds-metrics-window-pixels-4);
+    margin-top: var(--ds-spacing-sm);
 }
 
-.ds-node_custom-data-container > Foldout > TextField{
+.ds-node_custom-data-container > Foldout > TextField {
     margin-left: var(--ds-metrics-window-pixels-n12);
-    margin-top: var(--ds-metrics-window-pixels-8);
+    margin-top: var(--ds-spacing-md);
 }
 
-.ds-node_label{
-    margin-top: 10px;
-}
-.ds-node_sub-label{
-}
-/* BUILT IN */
+/* UNITY COMPONENT OVERRIDES */
 
-.unity-toggle_text{
-    margin-left: var(--ds-metrics-window-pixels-2);
+.unity-toggle_text {
+    margin-left: var(--ds-spacing-sm);
+    color: var(--ds-colors-text-secondary);
+    font-size: var(--ds-font-size-sm);
+}
+
+/* PORT STYLING */
+.unity-port {
+    background-color: var(--ds-colors-bg-elevated);
+    border-color: var(--ds-colors-border-primary);
+    border-radius: 50%;
+}
+
+.unity-port:hover {
+    background-color: var(--ds-colors-primary);
+    border-color: var(--ds-colors-primary);
+}
+
+.unity-port:focus {
+    background-color: var(--ds-colors-primary);
+    border-color: var(--ds-colors-primary);
+}
+
+/* EDGE STYLING */
+.unity-edge {
+    /* stroke properties not supported in Unity USS */
+}
+
+.unity-edge:hover {
+    /* stroke properties not supported in Unity USS */
+}
+
+.unity-edge.selected {
+    /* stroke properties not supported in Unity USS */
+}
+
+/* GROUP STYLING */
+.unity-group {
+    background-color: var(--ds-colors-bg-elevated);
+    border-color: var(--ds-colors-border-primary);
+    border-width: 2px;
+    border-radius: var(--ds-radius-xl);
+}
+
+.unity-group:hover {
+    border-color: var(--ds-colors-border-focus);
+}
+
+.unity-group.selected {
+    border-color: var(--ds-colors-primary);
+}
+
+.unity-group__title {
+    background-color: var(--ds-colors-primary);
+    color: var(--ds-colors-text-primary);
+    font-size: var(--ds-font-size-lg);
+    padding: var(--ds-spacing-md) var(--ds-spacing-lg);
+    border-radius: var(--ds-radius-xl) var(--ds-radius-xl) 0 0;
+}
+
+.unity-group__content {
+    background-color: var(--ds-colors-bg-secondary);
+    border-radius: 0 0 var(--ds-radius-xl) var(--ds-radius-xl);
+    padding: var(--ds-spacing-lg);
+    margin-top: var(--ds-spacing-sm);
+}
+
+/* SEARCH WINDOW STYLING */
+.unity-search-window {
+    background-color: var(--ds-colors-bg-elevated);
+    border-color: var(--ds-colors-border-primary);
+    border-width: 1px;
+    border-radius: var(--ds-radius-lg);
+}
+
+.unity-search-window__header {
+    background-color: var(--ds-colors-primary);
+    color: var(--ds-colors-text-primary);
+    padding: var(--ds-spacing-lg);
+    border-radius: var(--ds-radius-lg) var(--ds-radius-lg) 0 0;
+    font-size: var(--ds-font-size-xl);
+}
+
+.unity-search-window__content {
+    background-color: var(--ds-colors-bg-primary);
+    padding: var(--ds-spacing-lg);
+    border-radius: 0 0 var(--ds-radius-lg) var(--ds-radius-lg);
+}
+
+.unity-search-window__item {
+    background-color: var(--ds-colors-bg-secondary);
+    border-color: var(--ds-colors-border-primary);
+    border-width: 1px;
+    border-radius: var(--ds-radius-md);
+    padding: var(--ds-spacing-md) var(--ds-spacing-lg);
+    margin: var(--ds-spacing-sm) 0;
+}
+
+.unity-search-window__item:hover {
+    background-color: var(--ds-colors-bg-tertiary);
+    border-color: var(--ds-colors-border-secondary);
+}
+
+.unity-search-window__item:focus {
+    background-color: var(--ds-colors-primary);
+    border-color: var(--ds-colors-primary);
+    color: var(--ds-colors-text-primary);
+}
+
+/* CONTEXTUAL MENU STYLING */
+.unity-contextual-menu {
+    background-color: var(--ds-colors-bg-elevated);
+    border-color: var(--ds-colors-border-primary);
+    border-width: 1px;
+    border-radius: var(--ds-radius-md);
+    padding: var(--ds-spacing-sm);
+}
+
+.unity-contextual-menu__item {
+    background-color: transparent;
+    border-radius: var(--ds-radius-sm);
+    padding: var(--ds-spacing-sm) var(--ds-spacing-md);
+    margin: var(--ds-spacing-xs) 0;
+    color: var(--ds-colors-text-primary);
+    font-size: var(--ds-font-size-sm);
+}
+
+.unity-contextual-menu__item:hover {
+    background-color: var(--ds-colors-bg-tertiary);
+    color: var(--ds-colors-text-primary);
+}
+
+.unity-contextual-menu__item:focus {
+    background-color: var(--ds-colors-primary);
+    color: var(--ds-colors-text-primary);
+}
+
+.unity-contextual-menu__separator {
+    background-color: var(--ds-colors-border-primary);
+    height: 1px;
+    margin: var(--ds-spacing-sm) 0;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1200px) {
+    .ds-node_textfield > .unity-text-field_input {
+        max-width: var(--ds-metrics-window-pixels-200);
+        min-width: var(--ds-metrics-window-pixels-120);
+    }
+    
+    .ds-node_quote-textfield > .unity-text-field_input {
+        max-width: var(--ds-metrics-window-pixels-400);
+    }
+    
+    .unity-group {
+        border-width: 1px;
+    }
+    
+    .unity-group__title {
+        font-size: var(--ds-font-size-md);
+        padding: var(--ds-spacing-sm) var(--ds-spacing-md);
+    }
 }

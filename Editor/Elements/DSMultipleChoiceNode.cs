@@ -1,4 +1,3 @@
-using System;
 using DialogueSystem.Data.Save;
 using DialogueSystem.Enums;
 using DialogueSystem.Utilities;
@@ -38,10 +37,15 @@ namespace DialogueSystem.Elements
                     Text = "New Choice"
                 };
                 Choices.Add(choiceData);
-                var port = CreateChoicePort(choiceData);
-                outputContainer.Add(port);
+                
+                var choicePort = CreateChoicePort(choiceData);
+                outputContainer.Add(choicePort);
+                
+                RefreshExpandedState();
             });
             addChoiceButton.AddToClassList("ds-node_button");
+            addChoiceButton.AddToClassList("ds-node_button-add-choice");
+            addChoiceButton.tooltip = "Add Choice";
 
             mainContainer.Insert(1, addChoiceButton);
 
@@ -84,8 +88,12 @@ namespace DialogueSystem.Elements
                 Choices.Remove(choiceData);
 
                 GraphView.RemoveElement(choicePort);
+                
+                RefreshExpandedState();
             });
             deleteChoiceButton.AddToClassList("ds-node_button");
+            deleteChoiceButton.AddToClassList("ds-node_button-delete");
+            deleteChoiceButton.tooltip = "Delete Choice";
 
             VisualElement choiceContainer = new VisualElement();
             choiceContainer.style.flexDirection = FlexDirection.Row;
@@ -104,11 +112,13 @@ namespace DialogueSystem.Elements
             Button actionButton = new Button();
             actionButton.text = GetActionIcon(choiceData.ActionType);
             actionButton.tooltip = $"Action: {choiceData.ActionType}\nParam: {choiceData.ActionParameter ?? "None"}";
+            actionButton.tooltip = "Action Settings";
             actionButton.style.minWidth = 24;
             actionButton.style.maxWidth = 24;
             actionButton.style.minHeight = 20;
             actionButton.style.maxHeight = 20;
             actionButton.AddToClassList("ds-node_button");
+            actionButton.AddToClassList("ds-node_button-action");
             
             // Set the click event after the button is fully created
             actionButton.clicked += () => OpenActionPopup(choiceData, actionButton);

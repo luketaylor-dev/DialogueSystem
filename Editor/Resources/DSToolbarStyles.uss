@@ -1,56 +1,211 @@
-/* VISUAL ELEMENTS */
+/* MODERN TOOLBAR STYLING */
 
-Toolbar{
-    background-color: var(--ds-colors-window-dark-grey-1);
-    height: var(--ds-metrics-window-pixels-35);
+/* Main Toolbar */
+Toolbar {
+    background-color: var(--ds-colors-bg-elevated);
+    height: var(--ds-size-toolbar);
+    border-bottom-color: var(--ds-colors-border-primary);
+    border-bottom-width: 1px;
+    padding: var(--ds-spacing-sm) var(--ds-spacing-lg);
 }
 
-TextField{
-    padding: var(--ds-metrics-window-pixels-4);
+/* Text Fields */
+TextField {
+    padding: var(--ds-spacing-sm) var(--ds-spacing-md);
+    background-color: var(--ds-colors-bg-primary);
+    border-color: var(--ds-colors-border-primary);
+    border-radius: var(--ds-radius-md);
+    color: var(--ds-colors-text-primary);
+    font-size: var(--ds-font-size-md);
+}
+
+TextField:hover {
+    border-color: var(--ds-colors-border-secondary);
+    background-color: var(--ds-colors-bg-secondary);
+}
+
+TextField:focus {
+    border-color: var(--ds-colors-primary);
+    background-color: var(--ds-colors-bg-primary);
 }
 
 /* BUTTONS */
 
-.Button{
-    background-color: var(--ds-colors-window-dark-grey-5);
-    border-color: var(--ds-colors-window-dark-grey-1);
-    margin: var(--ds-metrics-window-pixels-4);
-    max-height: var(--ds-metrics-window-pixels-25);
+.Button {
+    background-color: var(--ds-colors-secondary);
+    border-color: var(--ds-colors-border-primary);
+    border-width: 1px;
+    border-radius: var(--ds-radius-md);
+    margin: var(--ds-spacing-sm);
+    max-height: var(--ds-size-button-md);
+    min-height: var(--ds-size-button-md);
+    padding: var(--ds-spacing-sm) var(--ds-spacing-lg);
+    color: var(--ds-colors-text-primary);
+    font-size: var(--ds-font-size-sm);
 }
 
-.Button:hover{
-    background-color: var(--ds-colors-window-dark-grey-2);
+.Button:hover {
+    background-color: var(--ds-colors-secondary-hover);
+    border-color: var(--ds-colors-border-secondary);
 }
 
-.Button:active{
-    background-color: var(--ds-colors-window-dark-grey-3);
-    color: var(--ds-colors-window-yellow);
+.Button:active {
+    background-color: var(--ds-colors-secondary-active);
+    color: var(--ds-colors-accent);
 }
 
-/* BUILT-IN */
-
-.unity-text-field__label{
-    padding: var(--ds-metrics-window-pixels-4)
+/* Primary Action Buttons */
+.Button[title*="Save"],
+.Button[title*="Load"],
+.Button[title*="Create"] {
+    background-color: var(--ds-colors-primary);
+    border-color: var(--ds-colors-primary);
+    color: var(--ds-colors-text-primary);
 }
 
-TextField:focus > unity-text-field__label{
-    color: var(--ds-colors-window-yellow)
+.Button[title*="Save"]:hover,
+.Button[title*="Load"]:hover,
+.Button[title*="Create"]:hover {
+    background-color: var(--ds-colors-primary-hover);
+    border-color: var(--ds-colors-primary-hover);
+}
+
+.Button[title*="Save"]:active,
+.Button[title*="Load"]:active,
+.Button[title*="Create"]:active {
+    background-color: var(--ds-colors-primary-active);
+}
+
+/* Danger Action Buttons */
+.Button[title*="Delete"],
+.Button[title*="Clear"],
+.Button[title*="Remove"] {
+    background-color: var(--ds-colors-error);
+    border-color: var(--ds-colors-error);
+    color: var(--ds-colors-text-primary);
+}
+
+.Button[title*="Delete"]:hover,
+.Button[title*="Clear"]:hover,
+.Button[title*="Remove"]:hover {
+    background-color: var(--ds-colors-error-hover);
+    border-color: var(--ds-colors-error-hover);
+}
+
+/* Success Action Buttons */
+.Button[title*="Apply"],
+.Button[title*="Confirm"],
+.Button[title*="Accept"] {
+    background-color: var(--ds-colors-success);
+    border-color: var(--ds-colors-success);
+    color: var(--ds-colors-text-primary);
+}
+
+.Button[title*="Apply"]:hover,
+.Button[title*="Confirm"]:hover,
+.Button[title*="Accept"]:hover {
+    background-color: var(--ds-colors-success-hover);
+    border-color: var(--ds-colors-success-hover);
+}
+
+/* Warning Action Buttons */
+.Button[title*="Warning"],
+.Button[title*="Alert"] {
+    background-color: var(--ds-colors-warning);
+    border-color: var(--ds-colors-warning);
+    color: var(--ds-colors-text-primary);
+}
+
+/* Selected State */
+.ds-toolbar_button_selected {
+    background-color: var(--ds-colors-primary);
+    border-color: var(--ds-colors-primary);
+    color: var(--ds-colors-text-primary);
+}
+
+.ds-toolbar_button_selected:hover {
+    background-color: var(--ds-colors-primary-hover);
+    border-color: var(--ds-colors-primary-hover);
+}
+
+/* UNITY COMPONENT OVERRIDES */
+
+.unity-text-field__label {
+    padding: var(--ds-spacing-sm);
+    color: var(--ds-colors-text-secondary);
+    font-size: var(--ds-font-size-sm);
+}
+
+TextField:focus > .unity-text-field__label {
+    color: var(--ds-colors-primary);
 }
 
 .unity-text-field_input {
-    background-color: var(--ds-colors-window-dark-grey-1);
-    border-color: var(--ds-colors-window-dark-grey-6);
-    border-radius: var(--ds-metrics-window-pixels-4);
-    max-height: var(--ds-metrics-window-pixels-25);
+    background-color: var(--ds-colors-bg-primary);
+    border-color: var(--ds-colors-border-primary);
+    border-radius: var(--ds-radius-md);
+    border-width: 1px;
+    max-height: var(--ds-size-input-md);
     min-width: var(--ds-metrics-window-pixels-120);
-    padding-left: var(--ds-metrics-window-pixels-6);
-    white-space: normal
+    padding: var(--ds-spacing-sm) var(--ds-spacing-md);
+    color: var(--ds-colors-text-primary);
+    font-size: var(--ds-font-size-md);
 }
 
-unity-text-field_input:focus{
-    color: var(--ds-colors-window-yellow);
+.unity-text-field_input:hover {
+    border-color: var(--ds-colors-border-secondary);
+    background-color: var(--ds-colors-bg-secondary);
 }
 
-.ds-toolbar_button_selected{
-    color: var(--ds-colors-window-yellow)
+.unity-text-field_input:focus {
+    border-color: var(--ds-colors-primary);
+    background-color: var(--ds-colors-bg-primary);
+}
+
+/* Button Groups */
+.unity-toolbar__button-group {
+    margin: 0 var(--ds-spacing-sm);
+}
+
+.unity-toolbar__button-group .Button {
+    margin: 0 var(--ds-spacing-xs);
+}
+
+.unity-toolbar__button-group .Button:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.unity-toolbar__button-group .Button:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.unity-toolbar__button-group .Button:not(:first-child):not(:last-child) {
+    border-radius: 0;
+}
+
+/* Toolbar Separators */
+.unity-toolbar__separator {
+    background-color: var(--ds-colors-border-primary);
+    width: 1px;
+    margin: var(--ds-spacing-sm);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    Toolbar {
+        height: auto;
+        min-height: var(--ds-size-toolbar);
+        flex-wrap: wrap;
+    }
+    
+    .Button {
+        min-width: auto;
+        padding: var(--ds-spacing-xs) var(--ds-spacing-md);
+    }
+    
+    .unity-text-field_input {
+        min-width: var(--ds-metrics-window-pixels-100);
+    }
 }
