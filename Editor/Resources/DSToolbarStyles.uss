@@ -181,10 +181,6 @@ TextField:focus > .unity-text-field__label {
     border-bottom-left-radius: 0;
 }
 
-.unity-toolbar__button-group .Button:not(:first-child):not(:last-child) {
-    border-radius: 0;
-}
-
 /* Toolbar Separators */
 .unity-toolbar__separator {
     background-color: var(--ds-colors-border-primary);

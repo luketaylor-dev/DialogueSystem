@@ -20,8 +20,15 @@ namespace DialogueSystem
             }
         }
 
+        public IDSDialogueActionHook ActionHook { get; set; }
+
         public void HandleDialogueAction(DSActionType actionType, string actionParameter)
         {
+            if (ActionHook != null && ActionHook.TryHandleAction(actionType, actionParameter))
+            {
+                return;
+            }
+
             switch (actionType)
             {
                 case DSActionType.None:
@@ -58,15 +65,7 @@ namespace DialogueSystem
 
         private void OpenShop(string shopId)
         {
-            Debug.Log($"Opening shop: {shopId}");
-            if (ShopManager.Instance != null)
-            {
-                ShopManager.Instance.OpenShop();
-            }
-            else
-            {
-                Debug.LogWarning("ShopManager not found! Make sure it's in the scene.");
-            }
+            Debug.LogWarning($"No {nameof(IDSDialogueActionHook)} handled opening shop '{shopId}'. Assign {nameof(ActionHook)} to open shops.");
         }
 
         private void GiveItem(string itemId)
