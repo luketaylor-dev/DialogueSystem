@@ -20,6 +20,9 @@ namespace DialogueSystem
 
         private List<GameObject> activeChoices;
 
+        /// <summary>Raised whenever the dialogue closes, whether a choice ended it or <see cref="EndDialogue"/> was called directly.</summary>
+        public event Action DialogueEnded;
+
         void Awake()
         {
             Instance = this;
@@ -42,6 +45,14 @@ namespace DialogueSystem
                 gameObject.SetActive(true);
             }
             StartDialogue(dialogueSO);
+        }
+
+        /// <summary>Shows the dialogue UI and starts at <paramref name="dialogue"/>, for games that pick the starting node themselves.</summary>
+        public void OpenDialogue(DSDialogueSO dialogue)
+        {
+            DialogueActive = true;
+            gameObject.SetActive(true);
+            StartDialogue(dialogue);
         }
 
         public void StartDialogue(DSDialogueSO dialogue)
@@ -85,8 +96,13 @@ namespace DialogueSystem
         public void EndDialogue()
         {
             //TODO: show a generic choice here, "end dialogue" or something
+            bool wasActive = DialogueActive;
             gameObject.SetActive(false);
             DialogueActive = false;
+            if (wasActive)
+            {
+                DialogueEnded?.Invoke();
+            }
         }
     }
 }
